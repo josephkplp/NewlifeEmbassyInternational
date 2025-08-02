@@ -6,15 +6,17 @@ import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="" element={<HomePage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/give" element={<Give />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/contactus" element={<ContactUs />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/give" element={<Give />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contactus" element={<ContactUs />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
