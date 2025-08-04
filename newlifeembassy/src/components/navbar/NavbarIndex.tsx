@@ -13,7 +13,9 @@ const NavBarIndex = () => {
   const [anchor, setAnchor] = useState<null | HTMLElement>(null);
   const theme = useTheme();
   // Use the theme to determine if the screen is mobile or not
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery((themes: theme) =>
+    themes.breakpoints.down("md")
+  );
   const navigate = useNavigate();
   const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchor(event.currentTarget);
