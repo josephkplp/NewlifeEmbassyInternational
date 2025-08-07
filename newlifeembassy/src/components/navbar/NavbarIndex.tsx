@@ -13,9 +13,7 @@ const NavBarIndex = () => {
   const [anchor, setAnchor] = useState<null | HTMLElement>(null);
   const theme = useTheme();
   // Use the theme to determine if the screen is mobile or not
-  const isMobile = useMediaQuery((themes: theme) =>
-    themes.breakpoints.down("md")
-  );
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const navigate = useNavigate();
   const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchor(event.currentTarget);
@@ -59,7 +57,7 @@ const NavBarIndex = () => {
               textAlign: "center",
               textDecoration: "none",
               color: "inherit",
-              fontFamily: "'Playfair Display', serif", // Church-appropriate font
+              fontFamily: theme.typography.fontFamily, // Church-appropriate font
             }}
           >
             NewLife Embassy
@@ -82,7 +80,7 @@ const NavBarIndex = () => {
           <Menu
             anchorEl={anchor}
             open={Boolean(anchor)}
-            onClose={() => handleCloseMenu}
+            onClose={handleCloseMenu}
             sx={{
               display: {
                 md: "none",
