@@ -8,8 +8,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import { ThemeToggleButton } from "./ThemeToggleButton";
 
-const NavBarIndex = () => {
+export const NavBarIndex = () => {
   const [anchor, setAnchor] = useState<null | HTMLElement>(null);
   const theme = useTheme();
   // Use the theme to determine if the screen is mobile or not
@@ -52,7 +54,8 @@ const NavBarIndex = () => {
           <Typography
             variant="h6"
             color="inherit"
-            component="link"
+            component={Link}
+            to={"/"}
             sx={{
               textAlign: "center",
               textDecoration: "none",
@@ -96,6 +99,9 @@ const NavBarIndex = () => {
               </MenuItem>
             ))}
           </Menu>
+          <Box sx={{ flexGrow: 1 }} />
+          <ThemeToggleButton />
+          <Box />
         </Toolbar>
       </AppBar>
     </Box>

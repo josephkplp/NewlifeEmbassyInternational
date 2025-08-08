@@ -8,15 +8,8 @@ import { zindex } from "./zindex";
 
 
 //light theme modes
-export const themes = createTheme({
-    colorSchemes: {
-        light: {
-            ...lightPalette,
-        },
-        dark: {
-            ...darkPalette,
-        }
-    },
+export const lightThemes = createTheme({
+    palette: lightPalette,
     ...typography,
     ...breakpoints,
     ...shapes,
@@ -26,4 +19,15 @@ export const themes = createTheme({
     direction: "ltr", // Default text direction
 
 }); 
+export const darkThemes = createTheme({
+    palette: darkPalette,
+    ...typography,
+    ...breakpoints,
+    ...shapes,
+    ...zindex,  
+    ...components,
+    spacing: 8, // Default spacing of 8px
+    direction: "ltr", // Default text direction
+
+});
 
